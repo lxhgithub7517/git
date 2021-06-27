@@ -1,0 +1,41 @@
+
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/dms
+  username: root
+  password: root123
+
+# 加载其他配置文件
+spring:
+  profiles:
+    active: a,b
+  # 数据库连接池
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dms
+    username: root
+    password: root123
+  # 整合redis
+  redis:
+    host: localhost
+    port: 6379
+
+# 配置日志级别控制
+logging:
+  level:
+    com.itheima: debug
+    org.springframework: info
+
+# 修改端口号
+server:
+  port: 8080
+
+# mybatis配置
+mybatis:
+  # 实体类别名包路径
+  type-aliases-package: com.xx.pojo
+  # 映射文件路径
+  # mapper-locations: classpath:mappers/*.xml
+  configuration:
+    # 控制台输出执行sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
